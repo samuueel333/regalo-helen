@@ -1,0 +1,327 @@
+body{
+    margin:0;
+    background:#ffe6ef;
+    font-family:Arial, sans-serif;
+    text-align:center;
+}
+
+h1{
+    margin-top:150px;
+    color:#ff3f75;
+    font-size:55px;
+}
+
+button{
+    padding:15px 35px;
+    margin:15px;
+    border:none;
+    border-radius:15px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+button:first-of-type{
+    background:#5dd39e;
+    color:white;
+}
+
+button:last-of-type{
+    background:#ff6b6b;
+    color:white;
+}
+.bienvenida{
+    text-align:center;
+    margin-top:120px;
+}
+
+.bienvenida h1{
+    font-size:60px;
+    color:#ff3b7d;
+}
+
+.bienvenida p{
+    font-size:28px;
+    margin:25px;
+}
+
+#empezarBtn{
+    padding:18px 40px;
+    font-size:25px;
+    border:none;
+    border-radius:50px;
+    background:#ff4f87;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#empezarBtn:hover{
+    transform:scale(1.1);
+}
+.bienvenida{
+    text-align:center;
+    margin-top:120px;
+}
+
+.bienvenida h1{
+    font-size:60px;
+    color:#ff3b7d;
+}
+
+.bienvenida p{
+    font-size:28px;
+    margin:25px;
+}
+
+#empezarBtn{
+
+    padding:18px 40px;
+    font-size:25px;
+    border:none;
+    border-radius:50px;
+    background:#ff4f87;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+#empezarBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+#carta{
+
+    display:none;
+    max-width:900px;
+    margin:80px auto;
+    text-align:center;
+    animation:aparecer 1s;
+
+}
+
+#carta h2{
+
+    font-size:50px;
+    color:#ff3b7d;
+
+}
+
+#textoCarta{
+
+    white-space:pre-line;
+    font-size:28px;
+    line-height:1.8;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+#continuarBtn{
+
+    margin-top:40px;
+    padding:15px 35px;
+    font-size:22px;
+    border:none;
+    border-radius:40px;
+    background:#ff4f87;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+#continuarBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+#galeria{
+
+    display:none;
+    text-align:center;
+    margin-top:70px;
+
+}
+
+#galeria h2{
+
+    color:#ff4f87;
+
+}
+
+#foto{
+
+    width:350px;
+    max-width:90%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+#anteriorBtn,
+#siguienteBtn{
+
+    margin:15px;
+    padding:12px 25px;
+    font-size:22px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+
+}
+/* ---------------- GALERÍA ---------------- */
+
+#galeria{
+    text-align:center;
+    animation:aparecer 1s;
+}
+
+#foto{
+    width:420px;
+    max-width:90%;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    transition:1s;
+}
+
+.fade{
+    opacity:0;
+}
+
+#descripcionFoto{
+    font-size:28px;
+    color:#ff3b7d;
+    margin:25px;
+    font-weight:bold;
+}
+
+/* ---------------- CORAZONES ---------------- */
+
+.corazon{
+    position:fixed;
+    font-size:25px;
+    animation:subir 6s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(100vh) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120px) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* ---------------- CONFETI ---------------- */
+
+.confeti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    animation:caer 4s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes caer{
+
+    from{
+        transform:translateY(-50px) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+
+}
+/* ---------------- REGALO FINAL ---------------- */
+
+#regaloFinal{
+    text-align:center;
+    margin-top:70px;
+    animation:aparecer 1s;
+}
+
+#regaloFinal h2{
+    color:#ff3b7d;
+    font-size:45px;
+}
+
+#regaloFinal p{
+    font-size:30px;
+    color:#444;
+}
+
+#caja{
+    font-size:120px;
+    cursor:pointer;
+    margin:40px auto;
+    transition:.6s;
+    animation:latido 1.2s infinite;
+}
+
+#caja:hover{
+    transform:scale(1.2);
+}
+
+@keyframes latido{
+
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+
+}
+
+#regaloFinal{
+    animation: aparecerFinal 1.2s ease;
+}
+
+@keyframes aparecerFinal{
+
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+#caja{
+
+    transition:0.6s;
+
+}
+
+#caja:hover{
+
+    transform:scale(1.15);
+
+}
