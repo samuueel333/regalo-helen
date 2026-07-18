@@ -23,7 +23,7 @@ Quería hacerte este pequeño regalo porque eres una persona increíble.
 
 Quizá no sea el mejor regalo que tengas,
 
-Pero sí está hecho con muchísimo cariño.
+Pero está hecho con muchísimo cariño.
 
 Nunca dejes de ser como eres.
 
