@@ -27,7 +27,7 @@ Pero está hecho con muchísimo cariño.
 
 Nunca dejes de ser como eres.
 
-Eres de las mejores personas que he conocido,por no decir la mejor.
+Eres de las mejores personas que he conocido, por no decir la mejor.
 
 Espero tenerte para toda la vida.
 
@@ -37,16 +37,18 @@ Espero que disfrutes todo lo que viene ahora.
 
 Te quiero muchoo ❤️`;
 
-document.getElementById("empezarBtn").addEventListener("click", () => {
+document.getElementById("empezarBtn").addEventListener("click",()=>{
 
-    bienvenida.style.display = "none";
+    bienvenida.style.display="none";
 
     if(musica){
-        musica.volume = 0.4;
+
+        musica.volume=0.4;
         musica.play().catch(()=>{});
+
     }
 
-    carta.style.display = "block";
+    carta.style.display="block";
 
     escribirCarta();
 
@@ -54,15 +56,17 @@ document.getElementById("empezarBtn").addEventListener("click", () => {
 
 function escribirCarta(){
 
-    textoCarta.innerHTML = "";
+    textoCarta.innerHTML="";
 
-    let i = 0;
+    continuarBtn.style.display="none";
+
+    let i=0;
 
     function escribir(){
 
-        if(i < mensaje.length){
+        if(i<mensaje.length){
 
-            textoCarta.innerHTML += mensaje.charAt(i);
+            textoCarta.innerHTML+=mensaje.charAt(i);
 
             i++;
 
@@ -70,7 +74,8 @@ function escribirCarta(){
 
         }else{
 
-            continuarBtn.style.display = "inline-block";
+            continuarBtn.style.display="inline-block";
+            continuarBtn.innerHTML="Continuar ❤️";
 
         }
 
@@ -82,14 +87,15 @@ function escribirCarta(){
 
 continuarBtn.addEventListener("click",()=>{
 
-    carta.style.display = "none";
+    carta.style.display="none";
 
-    galeria.style.display = "block";
+    galeria.style.display="block";
 
     mostrarFoto();
 
 });
-const fotos = [
+
+const fotos=[
 
     "img/foto1.jpg",
     "img/foto2.jpg",
@@ -103,7 +109,7 @@ const fotos = [
 
 ];
 
-const textos = [
+const textos=[
 
     "❤️ Cuando nos conocimos.",
     "😊 Al pasar el tiempo sigues teniendo el mismo humor.",
@@ -116,13 +122,12 @@ const textos = [
     "❤️ Feliz cumpleaños Helen."
 
 ];
-
 let fotoActual = 0;
 
 function mostrarFoto(){
 
     foto.classList.add("fade");
-
+    
     setTimeout(()=>{
 
         foto.src = fotos[fotoActual];
@@ -141,9 +146,9 @@ siguienteBtn.addEventListener("click",()=>{
 
     if(fotoActual >= fotos.length){
 
-        galeria.style.display = "none";
+        galeria.style.display="none";
 
-        regaloFinal.style.display = "block";
+        regaloFinal.style.display="block";
 
         return;
 
@@ -159,7 +164,7 @@ anteriorBtn.addEventListener("click",()=>{
 
     if(fotoActual < 0){
 
-        fotoActual = fotos.length - 1;
+        fotoActual = fotos.length-1;
 
     }
 
@@ -169,19 +174,19 @@ anteriorBtn.addEventListener("click",()=>{
 
 function crearParticula(){
 
-    const particula = document.createElement("div");
+    const particula=document.createElement("div");
 
-    particula.className = "particula";
+    particula.className="particula";
 
-    const dibujos = ["❤️","💕","💜","🎉","✨","🎊"];
+    const dibujos=["❤️","💕","💜","🎉","✨","🎊"];
 
-    particula.innerHTML = dibujos[Math.floor(Math.random()*dibujos.length)];
+    particula.innerHTML=dibujos[Math.floor(Math.random()*dibujos.length)];
 
-    particula.style.left = Math.random()*100 + "vw";
+    particula.style.left=Math.random()*100+"vw";
 
-    particula.style.animationDuration = (4 + Math.random()*4) + "s";
+    particula.style.animationDuration=(4+Math.random()*4)+"s";
 
-    particula.style.fontSize = (18 + Math.random()*20) + "px";
+    particula.style.fontSize=(18+Math.random()*20)+"px";
 
     efectos.appendChild(particula);
 
@@ -195,7 +200,7 @@ function crearParticula(){
 
 setInterval(()=>{
 
-    if(galeria.style.display === "block"){
+    if(galeria.style.display==="block"){
 
         crearParticula();
 
@@ -244,8 +249,125 @@ caja.addEventListener("click",()=>{
 
         </p>
 
+        <button id="continuarFinalBtn">Continuar ❤️</button>
+
         `;
+
+        const continuarFinalBtn=document.getElementById("continuarFinalBtn");
+
+        continuarFinalBtn.addEventListener("click",()=>{
+
+            iniciarFinal();
+
+        });
 
     },1000);
 
 });
+function iniciarFinal(){
+
+    regaloFinal.innerHTML=`
+
+    <div class="mensajeFinal">
+
+        <h1 id="mensajeCine"></h1>
+
+        <h1 id="finGrande" style="display:none;">✨ FIN ✨</h1>
+
+        <p id="firmaFinal" style="display:none;">
+            Creado especialmente para ti ❤️
+        </p>
+
+    </div>
+
+    `;
+
+    const mensaje=document.getElementById("mensajeCine");
+    const fin=document.getElementById("finGrande");
+    const firma=document.getElementById("firmaFinal");
+
+    const frases=[
+
+        "❤️ Gracias por existir ❤️",
+
+        "Espero te haya gustado",
+
+        "Pero esto no termina aquí...",
+
+        "🎁 Porque pronto tendrás otro regalo 🎁",
+
+        "✨❤️ FELIZ CUMPLEAÑOS HELEN ❤️✨"
+
+    ];
+
+    let i=0;
+
+    function siguienteFrase(){
+
+        if(i<frases.length){
+
+            mensaje.style.opacity="0";
+
+            setTimeout(()=>{
+
+                mensaje.innerHTML=frases[i];
+
+                mensaje.style.opacity="1";
+
+                i++;
+
+                setTimeout(siguienteFrase,2200);
+
+            },500);
+
+        }else{
+
+            mensaje.style.display="none";
+
+            fin.style.display="block";
+
+            firma.style.display="block";
+
+            lluviaCorazones();
+
+        }
+
+    }
+
+    siguienteFrase();
+
+}
+
+function lluviaCorazones(){
+
+    const intervalo=setInterval(()=>{
+
+        const corazon=document.createElement("div");
+
+        corazon.className="corazonFinal";
+
+        corazon.innerHTML="❤️";
+
+        corazon.style.left=Math.random()*100+"vw";
+
+        corazon.style.fontSize=(25+Math.random()*35)+"px";
+
+        corazon.style.animationDuration=(6+Math.random()*4)+"s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(()=>{
+
+            corazon.remove();
+
+        },10000);
+
+    },250);
+
+    setTimeout(()=>{
+
+        clearInterval(intervalo);
+
+    },15000);
+
+}
