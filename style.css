@@ -325,3 +325,171 @@ button:last-of-type{
     transform:scale(1.15);
 
 }
+/* ===== INTRO ===== */
+
+#intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    z-index:99999;
+    overflow:hidden;
+    display:none;
+}
+
+#matrix{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+#countdownContainer{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+}
+
+#countdown{
+    color:#EC407A;
+    font-size:120px;
+    font-weight:bold;
+    display:none;
+}
+
+#birthdayText{
+    color:#EC407A;
+    font-size:70px;
+    font-weight:bold;
+    text-align:center;
+    display:none;
+}
+/* ========= FINAL CINEMATOGRÁFICO ========= */
+
+#finalCinematografico{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    text-align:center;
+    color:white;
+
+}
+
+#textoFinal{
+
+    font-size:48px;
+    color:#EC407A;
+    font-weight:bold;
+    line-height:1.8;
+    max-width:900px;
+    padding:20px;
+
+}
+
+#finGrande{
+
+    font-size:90px;
+    color:#EC407A;
+    text-shadow:
+    0 0 15px #EC407A,
+    0 0 35px #EC407A;
+    animation:zoomFinal 1.5s ease;
+
+}
+
+#firmaFinal{
+
+    margin-top:18px;
+    font-size:18px;
+    color:white;
+    opacity:.75;
+    letter-spacing:2px;
+
+}
+#mensajeCine{
+
+    color:#EC407A;
+    font-size:55px;
+    transition:0.5s;
+    text-shadow:
+    0 0 15px #EC407A,
+    0 0 35px #EC407A;
+
+}
+/* ===== Corazones finales ===== */
+
+.corazonFinal{
+
+    position:fixed;
+    top:-50px;
+    color:red;
+    font-size:35px;
+    pointer-events:none;
+    animation:caerCorazon 8s linear forwards;
+    z-index:999999;
+
+}
+
+@keyframes caerCorazon{
+
+    0%{
+
+        transform:translateY(-50px);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(110vh);
+
+        opacity:1;
+
+    }
+
+}
+@keyframes zoomFinal{
+
+    0%{
+
+        transform:scale(0.2);
+        opacity:0;
+
+    }
+
+    60%{
+
+        transform:scale(1.2);
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
