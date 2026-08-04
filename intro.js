@@ -1,37 +1,133 @@
-const texto = document.getElementById("texto");
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-const mensajes = [
-    "30",
-    "31",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5 días...",
-    "Ha caducado."
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letras = [
+    "HAPPY",
+    "BIRTHDAY",
+    "HELEN",
+    "❤️",
+    "✨"
 ];
 
-let i = 0;
+const tamaño = 28;
 
-function mostrar() {
+const columnas = Math.floor(canvas.width / tamaño);
 
-    texto.style.opacity = "1";
-    texto.innerHTML = mensajes[i];
+const gotas = [];
 
-    i++;
+for(let i=0;i<columnas;i++){
 
-    if(i < mensajes.length){
+    gotas[i]=1;
 
-        setTimeout(() => {
+}
 
-            texto.style.opacity = "0";
+function dibujar(){
 
-            setTimeout(mostrar,300);
+    ctx.fillStyle="rgba(0,0,0,0.08)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
 
-        },1000);
+    ctx.fillStyle="#EC407A";
+    ctx.font=tamaño+"px Arial";
+
+    for(let i=0;i<gotas.length;i++){
+
+        const palabra=letras[Math.floor(Math.random()*letras.length)];
+
+        ctx.fillText(palabra,i*tamaño,gotas[i]*tamaño);
+
+        if(gotas[i]*tamaño>canvas.height && Math.random()>0.975){
+
+            gotas[i]=0;
+
+        }
+
+        gotas[i]++;
 
     }
 
 }
 
-mostrar();
+setInterval(dibujar,45);
+const contador = document.getElementById("contador");
+const texto = document.getElementById("texto");
+
+let numero = 5;
+
+setTimeout(()=>{
+
+    contador.style.display="block";
+
+    const intervalo = setInterval(()=>{
+
+        contador.innerHTML=numero;
+
+        numero--;
+
+        if(numero<0){
+
+            clearInterval(intervalo);
+
+            contador.style.display="none";
+
+            mostrarTexto();
+
+        }
+
+    },1000);
+
+},2000);
+
+function mostrarTexto(){
+
+    texto.style.display="block";
+
+    texto.innerHTML="HAPPY";
+    texto.style.animation="none";
+
+setTimeout(()=>{
+
+    texto.style.animation="zoomTexto 1s";
+
+},20);
+
+    setTimeout(()=>{
+
+        texto.innerHTML="HAPPY BIRTHDAY";
+        texto.style.animation="none";
+
+setTimeout(()=>{
+
+    texto.style.animation="zoomTexto 1s";
+
+},20);
+
+    },1800);
+
+    setTimeout(()=>{
+
+        texto.innerHTML="HAPPY BIRTHDAY HELEN ❤️";
+        texto.style.animation="none";
+
+setTimeout(()=>{
+
+    texto.style.animation="zoomTexto 1s";
+
+},20);
+
+    },3800);
+    setTimeout(()=>{
+
+    document.body.style.opacity="0";
+
+},7000);
+
+setTimeout(()=>{
+
+    window.location.href="index.html";
+
+},9000);
+
+}
